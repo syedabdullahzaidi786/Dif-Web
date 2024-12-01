@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/logo.png">
+    <title>Darul Ilm Foundation Secondary School</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- custom css link -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .careers {
+            padding: 5rem 9%;
+            background: #f0f0f0;
+        }
+        
+        .careers .heading {
+            text-align: center;
+            padding-bottom: 3rem;
+            text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
+            font-size: 5rem;
+            color: #444;
+        }
+        
+        .careers .heading span {
+            color: #0eb582;
+        }
+        
+        .careers .box-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+            overflow: hidden;
+        }
+        
+        .careers .box-container .image {
+            flex: 1 1 45rem;
+        }
+        
+        .careers .box-container .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .careers .box-container .content {
+            flex: 1 1 45rem;
+            padding: 3rem;
+        }
+        
+        .careers .box-container .content h3 {
+            color: #0eb582;
+            font-size: 3rem;
+            padding-bottom: 1rem;
+        }
+        
+        .careers .box-container .content p {
+            color: #666;
+            font-size: 1.5rem;
+            line-height: 2;
+            padding: 1rem 0;
+        }
+        
+        .careers .box-container .content .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: .7rem 3rem;
+            font-size: 1.7rem;
+            border-radius: .5rem;
+            border: .2rem solid #0eb582;
+            color: #0eb582;
+            cursor: pointer;
+            background: none;
+            text-decoration: none;
+            transition: all .3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .careers .box-container .content .btn .text {
+            position: relative;
+            z-index: 1;
+            transition: .3s ease;
+        }
+        
+        .careers .box-container .content .btn .text-2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+        
+        .careers .box-container .content .btn:hover {
+            background: #0eb582;
+        }
+        
+        .careers .box-container .content .btn:hover .text-1 {
+            opacity: 0;
+        }
+        
+        .careers .box-container .content .btn:hover .text-2 {
+            opacity: 1;
+            color: #fff;
+        }
+        
+        @media (max-width: 991px) {
+            .careers {
+                padding: 3rem;
+            }
+        
+            .careers .box-container {
+                flex-direction: column;
+            }
+        
+            .careers .box-container .image {
+                flex: 1 1 100%;
+            }
+        
+            .careers .box-container .content {
+                flex: 1 1 100%;
+            }
+        }
+        
+        @media (max-width: 450px) {
+            .careers .heading {
+                font-size: 3.5rem;
+            }
+        
+            .careers .box-container .content h3 {
+                font-size: 2.5rem;
+            }
+        
+            .careers .box-container .content p {
+                font-size: 1.3rem;
+            }
+        
+            .careers .box-container .content .btn {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    
+    <!-- header section starts -->
+
+    <header class="header">
+
+        <img src="./images/logo.png" height="100px" alt="Darul Ilm Foundation Secondary School Logo">
+
+        <nav class="navbar">
+            <a href="index.html" class="hover-underline">home</a>
+            <a href="#about" class="hover-underline">about</a>
+            <a href="#careers" class="hover-underline">careers</a>
+            <a href="#teacher" class="hover-underline">gallery</a>
+            <a href="#review" class="hover-underline">review</a>
+            <a href="#blog" class="hover-underline">staff</a>
+            <a href="#contact" class="hover-underline">contact</a>
+        </nav>
+
+        <div class="icons">
+            <div id="login-btn" class="fas fa-user"></div>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+
+        <!-- login form -->
+
+        <form action="" class="login-form">
+            <h3>login form</h3>
+            <input type="email" placeholder="enter your email" class="box">
+            <input type="password" placeholder="enter your password" class="box">
+            <div class="remember">
+                <input type="checkbox" name="" id="remember">
+                <label for="remember-me">remember me</label>
+            </div>
+            <a href="#" class="btn">
+                <span class="text text-1">login now</span>
+                <span class="text text-2" aria-hidden="true">login now</span>
+            </a>
+        </form>
+
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- careers section starts -->
+<section class="careers" id="careers">
+    <br><h1 class="heading">career <span>opportunities</span></h1>
+    <div class="box-container">
+        <div class="image">
+            <img src="https://thumbs.dreamstime.com/b/career-opportunity-golden-cubes-text-d-black-letters-business-profession-growth-concept-31121992.jpg" alt="Career opportunities at Darul Ilm Foundation Secondary School">
+        </div>
+        <div class="content">
+            <h3>Join Our Team</h3>
+            <p>We are always looking for talented and passionate individuals to join our team at Darul Ilm Foundation Secondary School. If you are dedicated to making a difference in education, we encourage you to apply.</p>
+            <a href="#" class="btn">
+                <span class="text text-1">apply now</span>
+                <span class="text text-2" aria-hidden="true">apply now</span>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- careers section ends -->
+
+    <!-- footer section starts -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>find us here</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum beatae.</p>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>contact us</h3>
+                <p>+1234 587 1478</p>
+                <a href="#" class="link">darulilmfoundation786@gmail.com</a>
+            </div>
+
+            <div class="box">
+                <h3>localization</h3>
+                <p>Plot No # B-173, Sec-35/A, Zaman Town, Karachi. 64900 Karachi, Korangi</p>
+            </div>
+
+        </div>
+        <div class="credit">created by <span>AR Developers </span>| all rights are reserved!</div>
+    </section>
+
+    <!-- footer section ends -->
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+</body>
+</html>

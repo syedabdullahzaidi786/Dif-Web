@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap");
 
 :root{
-  --primary-color: #12c2b9;
-  --secondary: #dbfffe;
+  --primary-color: #345749;
+  --secondary: #ffff;
   --black: #141414;
   --white: #fff;
   --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 *{
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0; padding: 0;
   box-sizing: border-box;
   outline: none; border: none;
@@ -52,25 +52,26 @@ section{
   margin-bottom: 3rem;
 }
 
-.heading::after{
-  content: url('../images/separator.svg');
-  display: block;
-  width: 10rem;
-  margin-inline: auto;
-  margin-top: -1rem;
+.heading::after {
+  /* content: url('../images/separator.png'); */
+  display: block; /* Make it a block element to apply margin */
+  width: 5px; /* Set a smaller width for the image */
+  height: 10px;
+  height: auto; /* Ensure the height adjusts proportionally */
+  margin: 0.5rem; /* Center the image horizontally and give space above and below */
 }
 
 .btn{
   position: relative;
   display: inline-block;
   margin-top: 1rem;
-  color: var(--primary-color);
+  color: var(--secondary);
   font-size: 1.4rem;
   font-weight: 700;
   text-transform: uppercase;
   max-width: max-content;
   border: .1rem solid var(--primary-color);
-  background: var(--secondary);
+  background: var(--primary-color);
   padding: 1.2rem 4.5rem;
   overflow: hidden;
   z-index: 1;

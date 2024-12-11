@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./images/logo.png">
+    <link rel="icon" type="image/x-icon" href="./images/logo.webp">
     <title>Darul Ilm Foundation Secondary School</title>
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -12,6 +12,77 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- custom css link -->
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* General Reset */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Blur effect for main content */
+        #main-content {
+            filter: blur(8px);
+            transition: filter 0.3s ease;
+        }
+
+        /* Popup overlay style */
+        #popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* Popup message style */
+        #popup-message {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #popup-message h2 {
+            margin-bottom: 10px;
+            font-size: 60px;
+            color: #345749;
+        }
+
+        #popup-message p {
+            margin-bottom: 20px;
+            font-size: 30px;
+            color: #e91e1e;
+        }
+
+        #close-btn {
+            padding: 10px 20px;
+            background-color: #345749;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #close-btn:hover {
+            background-color: #07af3f;
+        }
+
+        /* Hide the popup initially */
+        #popup-overlay.hidden {
+            display: none;
+        }
+    </style>
 
 </head>
 <body>
@@ -21,7 +92,7 @@
     <header class="header">
 
         <!-- <a href="" class="logo"><i class="fas fa-book"></i> edu</a> -->
-        <img src="./images/logo.png" height="100px">
+        <img src="./images/logo.webp" height="80px">
 
         <nav class="navbar">
             <a href="#home" class="hover-underline">home</a>
@@ -56,6 +127,21 @@
 
     </header>
 
+    <!-- Popup Message -->
+    <div id="popup-overlay">
+        <div id="popup-message">
+            <h2>خوش آمدید</h2>
+            <p>جونیئر مونٹیسوری میں آن لائن داخلہ کی رجسٹریشن ان شاء اللہ مؤرخہ 11جنوری 2025 بروز ہفتہ صبح9:00 بجے سے ہوگی۔</p>
+            <button id="close-btn">بند کریں</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <h1>یہ ویب سائٹ کا مرکزی مواد ہے</h1>
+        <p>یہ مواد پاپ اپ بند کرنے کے بعد صاف نظر آئے گا۔</p>
+    </div>
+
     <!-- header section ends -->
 
     <!-- home section starts-->
@@ -63,11 +149,11 @@
     <section class="home" id="home">
 
         <div class="content">
-            <h3>Darul Ilm Foundation Secondary School</h3>
+            <h3>دارالعلم فاؤنڈیشن سیکنڈری اسکول</h3>
             <p><b>Contemporary education from Montessori to Matric along with Hifz-e-Quran-e-Kareem in Islamic environment.</b></p>
-            <a href="#" class="btn">
-                <span class="text text-1">Register Now</span>
-                <span class="text text-2" aria-hidden="true">Register Now</span>
+            <a href="https://difs.schoolsolutions.pk/" class="btn">
+                <span class="text text-1">ابھی رجسٹر کریں۔</span>
+                <span class="text text-2" aria-hidden="true"></span>
             </a>    
         </div>
 
@@ -89,11 +175,10 @@
             </figure>
 
             <div class="about-content">
-                <h3>18 years of experience</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus aut impedit expedita aliquam 
-                    provident quod excepturi minus. Similique eveniet fugiat doloribus nisi saepe cupiditate iusto itaque totam! Officia, enim qui.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatum ipsa quod dolores officia at excepturi quas numquam vero dolorem vitae 
-                    veritatis quisquam fugit voluptates doloribus, id pariatur in ipsam?</p>    
+                <h3>دار العلم فاؤنڈیشن: تعلیم اور خدمت کا عزم</h3>
+                <p>دار العلوم فاؤنڈیشن ایک متحرک تعلیمی اور فلاحی ادارہ ہے جو معیاری تعلیم کی فراہمی اور اخلاقی اقدار کی تربیت کے لیے وقف ہے۔ یہ ادارہ علمی مہارت اور اخلاقی ترقی کے ذریعے افراد کو اپنی صلاحیتوں کو اجاگر کرنے میں مدد فراہم کرتا ہے۔</p>
+                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatum ipsa quod dolores officia at excepturi quas numquam vero dolorem vitae 
+                    veritatis quisquam fugit voluptates doloribus, id pariatur in ipsam?</p>     -->
                 <a href="#" class="btn">
                     <span class="text text-1">read more</span>
                     <span class="text text-2" aria-hidden="true">read more</span>
@@ -652,7 +737,7 @@
             </div>
 
         </div>
-        <div class="credit">created by <span>AR Developers </span>| all rights are reserved!</div>
+        <div class="credit">powered by <span>AR Developers </span>| all rights are reserved!</div>
     </section>
 
     <!-- footer section ends -->
@@ -669,6 +754,18 @@
 
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // JavaScript to handle popup and blur
+        const popupOverlay = document.getElementById("popup-overlay");
+        const mainContent = document.getElementById("main-content");
+        const closeBtn = document.getElementById("close-btn");
+
+        // Close the popup
+        closeBtn.addEventListener("click", function () {
+            popupOverlay.classList.add("hidden");
+            mainContent.style.filter = "none"; // Remove blur effect
+        });
+    </script>
     <!-- custom js -->
     <script src="js/script.js"></script>
 </body>

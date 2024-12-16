@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers Form - Darul Ilm Foundation</title>
+    <link rel="icon" type="image/x-icon" href="images/logo.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #10b981;
+            --primary-dark: #059669;
+            --secondary-color: #14b8a6;
+            --text-color: #047857;
+            --bg-color: #ecfdf5;
+            --bg-secondary: #e6fffa;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--bg-color), var(--bg-secondary));
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .container {
+            background-color: var(--white);
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .form-header {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-description {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .form-content {
+            padding: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            color: var(--text-color);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+        
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2310b981'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1em;
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border: none;
+            border-radius: 0.375rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: linear-gradient(to right, var(--primary-dark), var(--secondary-color));
+        }
+        
+        .submit-btn:active {
+            transform: translateY(1px);
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .form-header {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .form-content {
+                padding: 1.5rem;
+            }
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-header">
+            <img src="images/logo.webp" alt="Darul Ilm Foundation Logo" class="logo">
+            <h1>Careers Form</h1>
+            <p class="form-description">Join the Darul Ilm Foundation Team</p>
+        </div>
+        <div class="form-content">
+            <form id="careersForm">
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="appliedFor">Applied For Post:</label>
+                        <select id="appliedFor" name="appliedFor" required>
+                            <option value="">Select a position</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="administrator">Administrator</option>
+                            <option value="counselor">Counselor</option>
+                            <option value="librarian">Librarian</option>
+                            <option value="it-support">IT Support</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fatherHusbandName">Father/Husband Name:</label>
+                        <input type="text" id="fatherHusbandName" name="fatherHusbandName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="maritalStatus">Marital Status:</label>
+                        <select id="maritalStatus" name="maritalStatus" required>
+                            <option value="">Select marital status</option>
+                            <option value="single">Single</option>
+                            <option value="married">Married</option>
+                            <option value="widowed">Widowed</option>
+                            <option value="divorced">Divorced</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fatherHusbandProfession">Father/Husband Profession:</label>
+                        <input type="text" id="fatherHusbandProfession" name="fatherHusbandProfession" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cast">Cast:</label>
+                        <input type="text" id="cast" name="cast" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Residential Address:</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group tooltip">
+                        <label for="hfNo">H/F No:</label>
+                        <input type="text" id="hfNo" name="hfNo" required>
+                        <span class="tooltiptext">House/Flat Number</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="siblingsKids">No of Siblings/No of Kids:</label>
+                        <input type="number" id="siblingsKids" name="siblingsKids" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cnic">CNIC No:</label>
+                        <input type="text" id="cnic" name="cnic" pattern="\d{5}-\d{7}-\d" placeholder="12345-1234567-1" required>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Submit Application</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('careersForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Simulate form submission
+            const submitBtn = this.querySelector('.submit-btn');
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+            setTimeout(() => {
+                alert('Form submitted successfully!');
+                submitBtn.textContent = 'Submit Application';
+                submitBtn.disabled = false;
+                this.reset();
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

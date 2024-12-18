@@ -15,6 +15,7 @@
             --bg-color: #ecfdf5;
             --bg-secondary: #e6fffa;
             --white: #ffffff;
+            --error-color: #dc2626;
         }
         
         * {
@@ -55,12 +56,25 @@
             color: var(--white);
             padding: 2rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-header::after {
+            content: "﷽";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2rem;
+            opacity: 0.2;
         }
         
         .logo {
             width: 80px;
             height: 80px;
             margin-bottom: 1rem;
+            
+            
         }
         
         h1 {
@@ -80,6 +94,7 @@
         
         .form-group {
             margin-bottom: 1.5rem;
+            position: relative;
         }
         
         label {
@@ -96,13 +111,19 @@
             border-radius: 0.375rem;
             font-size: 1rem;
             color: var(--text-color);
-            transition: border-color 0.3s, box-shadow 0.3s;
+            transition: all 0.3s ease;
+            background-color: var(--white);
         }
         
         input:focus, select:focus {
             outline: none;
             border-color: var(--primary-color);
             box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+
+        input.invalid, select.invalid {
+            border-color: var(--error-color);
+            background-color: #fef2f2;
         }
         
         select {
@@ -116,16 +137,17 @@
         .tooltip {
             position: relative;
             display: inline-block;
+            width: 100%;
         }
         
         .tooltip .tooltiptext {
             visibility: hidden;
             width: 200px;
-            background-color: #555;
-            color: #fff;
+            background-color: #333;
+            color: var(--white);
             text-align: center;
             border-radius: 6px;
-            padding: 5px;
+            padding: 8px;
             position: absolute;
             z-index: 1;
             bottom: 125%;
@@ -133,6 +155,7 @@
             margin-left: -100px;
             opacity: 0;
             transition: opacity 0.3s;
+            font-size: 0.875rem;
         }
         
         .tooltip:hover .tooltiptext {
@@ -149,18 +172,145 @@
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.1s;
+            transition: all 0.3s ease;
             width: 100%;
+            position: relative;
+            overflow: hidden;
         }
         
         .submit-btn:hover {
             background: linear-gradient(to right, var(--primary-dark), var(--secondary-color));
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         .submit-btn:active {
-            transform: translateY(1px);
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
         }
         
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.show {
+            opacity: 1;
+            display: flex;
+        }
+
+        .modal-popup {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            transform: scale(0.7);
+            opacity: 0;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                       0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .modal-overlay.show .modal-popup {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .modal-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+
+        .modal-icon.success {
+            color: var(--primary-color);
+        }
+
+        .modal-icon.error {
+            color: var(--error-color);
+        }
+
+        .modal-title {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .modal-message {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-button {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .modal-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes checkmark {
+            0% { stroke-dashoffset: 100; }
+            100% { stroke-dashoffset: 0; }
+        }
+
+        .checkmark {
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: checkmark 1s ease forwards;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        .error-message {
+            color: var(--error-color);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        input.invalid + .error-message {
+            display: block;
+        }
+
         @media (max-width: 768px) {
             body {
                 padding: 1rem;
@@ -177,12 +327,34 @@
             .form-content {
                 padding: 1.5rem;
             }
+
+            .modal-popup {
+                width: 95%;
+                padding: 1.5rem;
+            }
         }
         
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 1.5rem;
+        }
+
+        /* Loading spinner */
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--white);
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 0.8s linear infinite;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -206,18 +378,22 @@
                             <option value="librarian">Librarian</option>
                             <option value="it-support">IT Support</option>
                         </select>
+                        <div class="error-message">Please select a position</div>
                     </div>
                     <div class="form-group">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required>
+                        <div class="error-message">Please enter your name</div>
                     </div>
                     <div class="form-group">
                         <label for="fatherHusbandName">Father/Husband Name:</label>
                         <input type="text" id="fatherHusbandName" name="fatherHusbandName" required>
+                        <div class="error-message">Please enter father/husband name</div>
                     </div>
                     <div class="form-group">
                         <label for="dob">Date of Birth:</label>
                         <input type="date" id="dob" name="dob" required>
+                        <div class="error-message">Please select your date of birth</div>
                     </div>
                     <div class="form-group">
                         <label for="maritalStatus">Marital Status:</label>
@@ -228,54 +404,196 @@
                             <option value="widowed">Widowed</option>
                             <option value="divorced">Divorced</option>
                         </select>
+                        <div class="error-message">Please select your marital status</div>
                     </div>
                     <div class="form-group">
                         <label for="fatherHusbandProfession">Father/Husband Profession:</label>
                         <input type="text" id="fatherHusbandProfession" name="fatherHusbandProfession" required>
+                        <div class="error-message">Please enter father/husband profession</div>
                     </div>
                     <div class="form-group">
                         <label for="cast">Cast:</label>
                         <input type="text" id="cast" name="cast" required>
+                        <div class="error-message">Please enter your cast</div>
                     </div>
                     <div class="form-group">
                         <label for="address">Residential Address:</label>
                         <input type="text" id="address" name="address" required>
+                        <div class="error-message">Please enter your address</div>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number:</label>
                         <input type="tel" id="phone" name="phone" required>
+                        <div class="error-message">Please enter a valid phone number</div>
                     </div>
                     <div class="form-group tooltip">
                         <label for="hfNo">H/F No:</label>
                         <input type="text" id="hfNo" name="hfNo" required>
                         <span class="tooltiptext">House/Flat Number</span>
+                        <div class="error-message">Please enter your house/flat number</div>
                     </div>
                     <div class="form-group">
                         <label for="siblingsKids">No of Siblings/No of Kids:</label>
                         <input type="number" id="siblingsKids" name="siblingsKids" min="0" required>
+                        <div class="error-message">Please enter number of siblings/kids</div>
                     </div>
                     <div class="form-group">
                         <label for="cnic">CNIC No:</label>
-                        <input type="number" id="cnic" name="cnic" pattern="\d{5}-\d{7}-\d" placeholder="12345-1234567-1" required>
+                        <input type="text" id="cnic" name="cnic" maxlength="15" placeholder="12345-1234567-1" required>
+                        <div class="error-message">Please enter a valid CNIC number</div>
                     </div>
                 </div>
                 <button type="submit" class="submit-btn">Submit Application</button>
             </form>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-popup">
+            <div class="modal-icon" id="modalIcon">
+                <!-- Icon will be inserted by JavaScript -->
+            </div>
+            <h3 class="modal-title" id="modalTitle">Success!</h3>
+            <p class="modal-message" id="modalMessage">Your application has been submitted successfully.</p>
+            <button class="modal-button" onclick="closeModal()">Continue</button>
+        </div>
+    </div>
+
     <script>
+        function showModal(type, title, message) {
+            const modal = document.getElementById('modalOverlay');
+            const icon = document.getElementById('modalIcon');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalMessage = document.getElementById('modalMessage');
+
+            modalTitle.textContent = title;
+            modalMessage.textContent = message;
+
+            if (type === 'success') {
+                icon.innerHTML = `
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path class="checkmark" d="M20 6L9 17L4 12" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                `;
+                icon.className = 'modal-icon success';
+            } else {
+                icon.innerHTML = `
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shake">
+                        <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                `;
+                icon.className = 'modal-icon error';
+            }
+
+            modal.classList.add('show');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modalOverlay');
+            modal.classList.remove('show');
+        }
+
+        function formatCNIC(input) {
+            let value = input.replace(/\D/g, '');
+            if (value.length > 13) value = value.slice(0, 13);
+            
+            if (value.length >= 5) {
+                value = value.slice(0, 5) + '-' + value.slice(5);
+            }
+            if (value.length >= 13) {
+                value = value.slice(0, 13) + '-' + value.slice(13);
+            }
+            
+            return value;
+        }
+
+        function validateCNIC(cnic) {
+            const cnicRegex = /^\d{5}-\d{7}-\d$/;
+            return cnicRegex.test(cnic);
+        }
+
+        function validatePhone(phone) {
+            const phoneRegex = /^[\d-+]{10,}$/;
+            return phoneRegex.test(phone);
+        }
+
+        // Form submission handler
         document.getElementById('careersForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            // Simulate form submission
+            
+            // Validate all required fields
+            const form = this;
+            const inputs = form.querySelectorAll('input, select');
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.classList.add('invalid');
+                } else {
+                    input.classList.remove('invalid');
+                }
+            });
+
+            // CNIC validation
+            const cnic = document.getElementById('cnic').value;
+            if (!validateCNIC(cnic)) {
+                document.getElementById('cnic').classList.add('invalid');
+                showModal('error', 'Invalid CNIC', 'Please enter a valid CNIC number (e.g., 12345-1234567-1)');
+                return;
+            }
+
+            // Phone validation
+            const phone = document.getElementById('phone').value;
+            if (!validatePhone(phone)) {
+                document.getElementById('phone').classList.add('invalid');
+                showModal('error', 'Invalid Phone Number', 'Please enter a valid phone number');
+                return;
+            }
+
+            if (!isValid) {
+                showModal('error', 'Validation Error', 'Please fill all required fields correctly');
+                return;
+            }
+
+            // Show loading state
             const submitBtn = this.querySelector('.submit-btn');
-            submitBtn.textContent = 'Submitting...';
+            const originalText = submitBtn.textContent;
+            submitBtn.innerHTML = '<span class="loading-spinner"></span>Submitting...';
             submitBtn.disabled = true;
+
+            // Simulate form submission
             setTimeout(() => {
-                alert('Form submitted successfully!');
-                submitBtn.textContent = 'Submit Application';
+                showModal('success', 'Success!', 'Your application has been submitted successfully. We will contact you soon.');
+                submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
-                this.reset();
+                form.reset();
             }, 2000);
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('modalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Input validation handlers
+        document.querySelectorAll('input, select').forEach(input => {
+            input.addEventListener('input', function() {
+                this.classList.remove('invalid');
+            });
+        });
+
+        // CNIC input formatting
+        document.getElementById('cnic').addEventListener('input', function(e) {
+            this.value = formatCNIC(this.value);
+        });
+
+        // Phone number formatting
+        document.getElementById('phone').addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^\d-+]/g, '');
         });
     </script>
 </body>

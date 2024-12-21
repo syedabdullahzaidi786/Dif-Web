@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/logo.webp">
+    <title>Darul Ilm Foundation Secondary School</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- custom css link -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* General Reset */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Blur effect for main content */
+        #main-content {
+            filter: blur(8px);
+            transition: filter 0.3s ease;
+        }
+
+        /* Popup overlay style */
+        #popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* Popup message style */
+        #popup-message {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #popup-message h2 {
+            margin-bottom: 10px;
+            font-size: 60px;
+            color: #345749;
+        }
+
+        #popup-message p {
+            margin-bottom: 20px;
+            font-size: 30px;
+            color: #e91e1e;
+        }
+
+        #close-btn {
+            padding: 10px 20px;
+            background-color: #345749;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #close-btn:hover {
+            background-color: #07af3f;
+        }
+
+        /* Hide the popup initially */
+        #popup-overlay.hidden {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <!-- header section starts -->
+
+    <header class="header">
+
+        <!-- <a href="" class="logo"><i class="fas fa-book"></i> edu</a> -->
+        <img src="./images/logo.webp" height="80px">
+
+        <nav class="navbar">
+            <a href="#home" class="hover-underline">home</a>
+            <a href="#about" class="hover-underline">about</a>
+            <a href="carrers.html" class="hover-underline">carrers</a>
+            <!-- <a href="#teacher" class="hover-underline">gallery</a>
+            <a href="#review" class="hover-underline">review</a>
+            <a href="#blog" class="hover-underline">staff</a> -->
+            <a href="#contact" class="hover-underline">contact</a>
+        </nav>
+
+        <div class="icons">
+            <div id="login-btn" class="fas fa-user"></div>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+
+        <!-- login form -->
+
+        <form action="" class="login-form">
+            <h3>login form</h3>
+            <input type="email" placeholder="enter your email" class="box">
+            <input type="password" placeholder="enter your password" class="box">
+            <div class="remember">
+                <input type="checkbox" name="" id="remember">
+                <label for="remember-me">remember me</label>
+            </div>
+            <a href="#" class="btn">
+                <span class="text text-1">login now</span>
+                <span class="text text-2" aria-hidden="true">login now</span>
+            </a>
+        </form>
+
+    </header>
+
+    <!-- Popup Message -->
+    <div id="popup-overlay">
+        <div id="popup-message">
+            <h2>خوش آمدید</h2>
+            <p>جونیئر مونٹیسوری میں آن لائن داخلہ کی رجسٹریشن ان شاء اللہ مؤرخہ 11جنوری 2025 بروز ہفتہ صبح9:00 بجے سے ہوگی۔</p>
+            <button id="close-btn">بند کریں</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <h1>یہ ویب سائٹ کا مرکزی مواد ہے</h1>
+        <p>یہ مواد پاپ اپ بند کرنے کے بعد صاف نظر آئے گا۔</p>
+    </div>
+
+    <!-- header section ends -->
+
+    <!-- home section starts-->
+
+    <section class="home" id="home">
+
+        <div class="content">
+            <h3>دارالعلم فاؤنڈیشن سیکنڈری اسکول</h3>
+            <p><b>Contemporary education from Montessori to Matric along with Hifz-e-Quran-e-Kareem in Islamic environment.</b></p>
+            <a href="admission.html" class="btn">
+                <span class="text text-1">ابھی رجسٹر کریں۔</span>
+                <span class="text text-2" aria-hidden="true"></span>
+            </a>    
+        </div>
+
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- about section starts -->
+
+    <section class="about" id="about">
+
+        <h1 class="heading">about us</h1>
+
+        <div class="container">
+
+            <figure class="about-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqmcbCpvs9G9O4Wf4o-y7XyK7kfbr-dsLXbg&s" alt="" height="500">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKW3lSwDHElZsE85COxNAwYUrzk5GKa3_SoA&s" alt="" class="about-img">
+            </figure>
+
+            <div class="about-content">
+                <h3>دار العلم فاؤنڈیشن: تعلیم اور خدمت کا عزم</h3>
+                <p>دار العلوم فاؤنڈیشن ایک متحرک تعلیمی اور فلاحی ادارہ ہے جو معیاری تعلیم کی فراہمی اور اخلاقی اقدار کی تربیت کے لیے وقف ہے۔ یہ ادارہ علمی مہارت اور اخلاقی ترقی کے ذریعے افراد کو اپنی صلاحیتوں کو اجاگر کرنے میں مدد فراہم کرتا ہے۔</p>
+                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatum ipsa quod dolores officia at excepturi quas numquam vero dolorem vitae 
+                    veritatis quisquam fugit voluptates doloribus, id pariatur in ipsam?</p>     -->
+                <a href="#" class="btn">
+                    <span class="text text-1">read more</span>
+                    <span class="text text-2" aria-hidden="true">read more</span>
+                </a>        
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- about section ends -->
+
+    <!-- subjects section starts -->
+
+    <section class="subjects">
+
+        <h1 class="heading">our features</h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="https://images.vexels.com/media/users/3/324277/isolated/preview/4f2373f528be595c1fa3c274cb89ce31-book-icon-in-blue-color.png" alt="">
+                <h3>Quality Education</h3>
+                <p>Our curriculum is designed to nurture excellence.</p>
+            </div>
+
+            <div class="box">
+                <img src="https://cdn-icons-png.flaticon.com/512/10686/10686449.png" alt="">
+                <h3>Experienced Faculty</h3>
+                <p>Our teachers are experts in their fields.</p>
+            </div>
+
+            <div class="box">
+                <img src="https://png.pngtree.com/png-clipart/20221231/original/pngtree-blue-school-building-icon-logo-png-image_8838569.png" alt="">
+                <h3>Modern Facilities</h3>
+                <p>Our campus is equipped with state-of-the-art facilities.</p>
+            </div>
+
+            <!-- <div class="box">
+                <img src="images/subject-4.png" alt="">
+                <h3>engineering</h3>
+                <p>fun & challenging</p>
+            </div> -->
+
+        </div>
+
+    </section>
+
+    <!-- subject section ends -->
+
+    <!-- courses section starts -->
+
+    <section class="courses" id="courses">
+
+        <h1 class="heading">our campuses</h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <div class="image shine">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLkWPhlfiyT8PWt-Z6uAWiobQO3-O5ir-e9Q&s" alt="">
+                    <h3>Campus 1</h3>
+                </div>
+                <div class="content">
+                    <!-- <h4>$49.99</h4>
+                    <p>updated 25/09/2021</p>
+                    <h3>frontend development</h3> -->
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(785)</span>
+                    </div>
+                    <!-- <div class="icons">
+                        <span><i class="far fa-bookmark"></i> 15 lessons</span>
+                        <span><i class="far fa-clock"></i> 8h 25m 9s</span>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image shine">
+                    <img src="https://hfs.edu.pk/wp-content/uploads/2020/11/about.jpg" alt="">
+                    <h3>Campus 2</h3>
+                </div>
+                <div class="content">
+                    <!-- <h4>$49.99</h4>
+                    <p>updated 25/09/2021</p>
+                    <h3>frontend development</h3> -->
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(785)</span>
+                    </div>
+                    <!-- <div class="icons">
+                        <span><i class="far fa-bookmark"></i> 15 lessons</span>
+                        <span><i class="far fa-clock"></i> 8h 25m 9s</span>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image shine">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ35AvVGkrgETLBk4mh7h5qb_sNHChmopdSg&s" alt="">
+                    <h3>Campus 3</h3>
+                </div>
+                <div class="content">
+                    <!-- <h4>$49.99</h4>
+                    <p>updated 25/09/2021</p> -->
+                    <h3>Darul Quran</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(785)</span>
+                    </div>
+                    <!-- <div class="icons">
+                        <span><i class="far fa-bookmark"></i> 15 lessons</span>
+                        <span><i class="far fa-clock"></i> 8h 25m 9s</span>
+                    </div> -->
+                </div>
+            </div>
+
+            <!-- <div class="box">
+                <div class="image shine">
+                    <img src="images/course-4.jpg" alt="">
+                    <h3>basic</h3>
+                </div>
+                <div class="content">
+                    <h4>$49.99</h4>
+                    <p>updated 25/09/2021</p>
+                    <h3>frontend development</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(785)</span>
+                    </div>
+                    <div class="icons">
+                        <span><i class="far fa-bookmark"></i> 15 lessons</span>
+                        <span><i class="far fa-clock"></i> 8h 25m 9s</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image shine">
+                    <img src="images/course-5.jpg" alt="">
+                    <h3>basic</h3>
+                </div>
+                <div class="content">
+                    <h4>$49.99</h4>
+                    <p>updated 25/09/2021</p>
+                    <h3>frontend development</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(785)</span>
+                    </div>
+                    <div class="icons">
+                        <span><i class="far fa-bookmark"></i> 15 lessons</span>
+                        <span><i class="far fa-clock"></i> 8h 25m 9s</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image shine">
+                    <img src="images/course-6.jpg" alt="">
+                    <h3>basic</h3>
+                </div>
+                <div class="content">
+                    <h4>$49.99</h4>
+                    <p>updated 25/09/2021</p>
+                    <h3>frontend development</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(785)</span>
+                    </div>
+                    <div class="icons">
+                        <span><i class="far fa-bookmark"></i> 15 lessons</span>
+                        <span><i class="far fa-clock"></i> 8h 25m 9s</span>
+                    </div> -->
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- courses section ends -->
+
+    <!-- teacher section starts -->
+
+    <section class="teacher" id="teacher">
+
+        <h1 class="heading">gallery</h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://scontent.fkhi16-2.fna.fbcdn.net/v/t1.6435-9/30441120_1279943082139949_6574886879047450624_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFjmFaUbGhxTfIl70jsZKmDgnH2SVwdoMKCcfZJXB2gwq4pGZlLUaWYvEBosA_AU4ZaUhubO3i6L0KiOuRTxFCh&_nc_ohc=z6hst_MJw80Q7kNvgGrLf1m&_nc_zt=23&_nc_ht=scontent.fkhi16-2.fna&_nc_gid=ACRIQyuEUtRGWSU-bFpDCJH&oh=00_AYD9OdDsvPita6HtU_0VlEbXax_HGvxPDRO03LkW1FoGTQ&oe=6771429F" alt="">
+                    <!-- <div class="share">
+                        <a href="#" class="fab fa-facebook-f"></a>
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="#" class="fab fa-instagram"></a>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://scontent.fkhi16-1.fna.fbcdn.net/v/t1.6435-9/30442523_1279943382139919_3108455290257801216_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE5w2p9UBMH_4S4d_CZR366nWc-MgrCOvydZz4yCsI6_Ppm4cd85TCX8h6GyANP37qPKV7l1RdFVNBaPu8jySE5&_nc_ohc=9dI_CfZ--ugQ7kNvgE2ENpQ&_nc_zt=23&_nc_ht=scontent.fkhi16-1.fna&_nc_gid=A626DRa3aXKcu4uDfeR90Fq&oh=00_AYBU-UEcOHxffaC5IViKUKEJewrjvTc8cmi2mThR_3gpnw&oe=677135FD" alt="">
+                    <!-- <div class="share">
+                        <a href="#" class="fab fa-facebook-f"></a>
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="#" class="fab fa-instagram"></a>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://scontent.fkhi16-1.fna.fbcdn.net/v/t1.6435-9/30440816_1279942968806627_6382035623322058752_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG3durnipG1W-gyH2EtaeLsd4zTvhPgVA53jNO-E-BUDneOiBmtQpEfZZTrOp7YaLJM3xfavMeEgTCDPYOLFWt4&_nc_ohc=WI0WRowVgdkQ7kNvgFZOTZA&_nc_zt=23&_nc_ht=scontent.fkhi16-1.fna&_nc_gid=AUcy1zPCoErU3Yen-Ww-ohr&oh=00_AYCkfZ1F5-QKke8jgJKULJmrIDGeyepznFK0rVL6Ed_oQg&oe=67715701" alt="">
+                    <!-- <div class="share">
+                        <a href="#" class="fab fa-facebook-f"></a>
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="#" class="fab fa-instagram"></a>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://scontent.fkhi16-1.fna.fbcdn.net/v/t39.30808-6/464444573_3331191887015048_1552433962670253871_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHyEny3Da7hQpOPim3m7te_r7_qIOuFAQyvv-og64UBDJscwznWxwr38taG5tXFgTsqxOsTPg0SUFoGQ0nomO45&_nc_ohc=m10EgO4cmRwQ7kNvgEuTOcV&_nc_zt=23&_nc_ht=scontent.fkhi16-1.fna&_nc_gid=AI1q78XGxIWvf2ydmVcr1Lc&oh=00_AYCxMo6QHdBvz8dfoc3v4DzrNU96d6ppnMmAo4YghB_xPQ&oe=674F92B8" alt="">
+                    <!-- <div class="share">
+                        <a href="#" class="fab fa-facebook-f"></a>
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="#" class="fab fa-instagram"></a>
+                    </div> -->
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- teacher section ends -->
+
+    <!-- review section starts -->
+
+    <section class="review" id="review">
+
+        <h1 class="heading">our students review</h1>
+
+        <div class="swiper review-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide slide">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium laudantium distinctio dolore molestias facilis velit pariatur maiores debitis inventore.</p>
+                    <div class="wrapper">
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                    </div>
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="images/review-1.png" alt="">
+                        <div class="user-info">
+                            <h3>john deo</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium laudantium distinctio dolore molestias facilis velit pariatur maiores debitis inventore.</p>
+                    <div class="wrapper">
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                    </div>
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="images/review-2.png" alt="">
+                        <div class="user-info">
+                            <h3>john deo</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium laudantium distinctio dolore molestias facilis velit pariatur maiores debitis inventore.</p>
+                    <div class="wrapper">
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                    </div>
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="images/review-3.png" alt="">
+                        <div class="user-info">
+                            <h3>john deo</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium laudantium distinctio dolore molestias facilis velit pariatur maiores debitis inventore.</p>
+                    <div class="wrapper">
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                    </div>
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="images/review-4.png" alt="">
+                        <div class="user-info">
+                            <h3>john deo</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium laudantium distinctio dolore molestias facilis velit pariatur maiores debitis inventore.</p>
+                    <div class="wrapper">
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                    </div>
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="images/review-5.png" alt="">
+                        <div class="user-info">
+                            <h3>john deo</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium laudantium distinctio dolore molestias facilis velit pariatur maiores debitis inventore.</p>
+                    <div class="wrapper">
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                    </div>
+                    <i class="fas fa-quote-right"></i>
+                    <div class="user">
+                        <img src="images/review-6.png" alt="">
+                        <div class="user-info">
+                            <h3>john deo</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- review section ends -->
+
+    <!-- blog section starts -->
+
+    <section class="blog" id="blog">
+
+        <h1 class="heading">our staff</h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <div class="image shine">
+                    <img src="https://cdn.vectorstock.com/i/500p/30/98/director-icon-isolated-line-vector-53273098.jpg" alt="">
+                    <!-- <h3>09 dec 2022</h3> -->
+                </div>
+                <div class="content">
+                    <div class="icons">
+                        <a href="#"><i class="fas fa-user"></i>Director</a>
+                    </div>
+                    <h3>Sir </h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam explicabo minus.</p>
+                    <!-- <a href="#" class="btn">
+                        <span class="text text-1">read more</span>
+                        <span class="text text-2" aria-hidden="true">read more</span>
+                    </a> -->
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image shine">
+                    <img src="https://media.istockphoto.com/id/1449791530/vector/principal-boss.jpg?s=612x612&w=0&k=20&c=v36eaHkph_cTVMoNAY-rrJD4QxnxKIdyC6dNM06lU6E=" alt="">
+                    <!-- <h3>09 dec 2022</h3> -->
+                </div>
+                <div class="content">
+                    <div class="icons">
+                        <a href="#"><i class="fas fa-user"></i>Principal</a>
+                    </div>
+                    <h3>Sir</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam explicabo minus.</p>
+                    <!-- <a href="#" class="btn">
+                        <span class="text text-1">read more</span>
+                        <span class="text text-2" aria-hidden="true">read more</span>
+                    </a> -->
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image shine">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6ziW1yLsn2LtA5i9A6Uc39Z5S6gOTIFPqeA&s" alt="">
+                    <!-- <h3>09 dec 2022</h3> -->
+                </div>
+                <div class="content">
+                    <div class="icons">
+                        <a href="#"><i class="fas fa-user"></i>Accounts</a>
+                    </div>
+                    <h3>Sir </h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam explicabo minus.</p>
+                    <!-- <a href="#" class="btn">
+                        <span class="text text-1">read more</span>
+                        <span class="text text-2" aria-hidden="true">read more</span>
+                    </a> -->
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- blog section ends -->
+
+    <!-- contact section starts -->
+
+    <section class="contact" id="contact">
+
+        <h1 class="heading">contact us</h1>
+
+        <div class="row">
+            <div class="image">
+                <img src="images/contact.png" alt="">
+            </div>
+            <form action="">
+                <h3>send us a message</h3>
+                <input type="text" placeholder="name" class="box">
+                <input type="email" placeholder="email" class="box">
+                <input type="number" placeholder="phone number" class="box">
+                <textarea placeholder="message" class="box" cols="30" rows="10"></textarea>
+                <a href="#" class="btn">
+                    <span class="text text-1">send message</span>
+                    <span class="text text-2" aria-hidden="true">send message</span>
+                </a>
+            </form>
+        </div>
+
+    </section>
+
+    <!-- contact section ends -->
+
+    <!-- footer section stars -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>find us here</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum beatae.</p>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>contact us</h3>
+                <p>+1234 587 1478</p>
+                <a href="#" class="link">darulilmfoundation786@gmail.com</a>
+            </div>
+
+            <div class="box">
+                <h3>localization</h3>
+                <p>Plot No # B-173, Sec-35/A, Zaman Town, Karachi. 64900 Karachi, Korangi</p>
+            </div>
+
+        </div>
+        <div class="credit">powered by <span>AR Developers </span>| all rights are reserved!</div>
+    </section>
+
+    <!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // JavaScript to handle popup and blur
+        const popupOverlay = document.getElementById("popup-overlay");
+        const mainContent = document.getElementById("main-content");
+        const closeBtn = document.getElementById("close-btn");
+
+        // Close the popup
+        closeBtn.addEventListener("click", function () {
+            popupOverlay.classList.add("hidden");
+            mainContent.style.filter = "none"; // Remove blur effect
+        });
+    </script>
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+</body>
+</html>

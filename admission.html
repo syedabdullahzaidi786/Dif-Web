@@ -170,6 +170,60 @@
                 font-size: 18px;
             }
         }
+
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .styled-button {
+            padding: 15px 30px;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .styled-button:hover {
+            background-color: #004d40;
+            transform: scale(1.05);
+        }
+
+        .styled-button:active {
+            background-color: #00332e;
+            transform: scale(0.95);
+        }
+
+        .powered-logo {
+            width: 50px;
+            height: auto;
+        }
+        
+        .powered-by {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+            color: white;
+            font-size: 18px;
+            font-family: 'Arial', sans-serif;
+            font-weight: bolder;
+            direction: ltr; /* Ensures left-to-right layout */
+        }
+        
+        
+        
+        
+        
     </style>
 </head>
 <body>
@@ -255,9 +309,15 @@
     <div class="footer">
         جونیئر مونٹیسوری میں آن لائن داخلہ کی رجسٹریشن ان شاء اللہ مؤرخہ 11جنوری 2025 بروز ہفتہ صبح 9:00 بجے سے ہوگی۔
     </div>
+    <div class="button-container">
+        <a href="form.html" class="styled-button">رجسٹریشن کے لیے فارم پُر کریں</a>
+    </div>
 
-    <div class="powered-by" style="background-color: #f2f5f2;">
-        <p>Powered By AR Developers</p>
+    <div class="footer">
+        <div class="powered-by">
+            <img src="images/ar-logo.jpg" alt="Powered By Logo" class="powered-logo">
+            <span>Powered by AR Developers</span>
+        </div>
     </div>
 </body>
 </html>
